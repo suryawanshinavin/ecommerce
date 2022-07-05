@@ -25,7 +25,7 @@ if (isset($_POST['login'])) {
     $_SESSION['id'] = $user_row['id'];
     $_SESSION['name'] = $user_row['name'];
     echo "<script>alert('Login!');</script>";
-    header("Location: main.php");
+    header("Location: admin/index.php");
     exit;
   }
 }
@@ -35,7 +35,7 @@ if (isset($_POST['login'])) {
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>Login</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
