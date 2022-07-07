@@ -26,7 +26,6 @@ if (isset($_POST['login'])) {
     $_SESSION['user_role'] = $user_row['user_role'];
     echo "<script>alert('Login!');</script>";
     header("Location: admin/dashboard.php");
-    exit;
   }
 }
 ?>

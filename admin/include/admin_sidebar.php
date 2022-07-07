@@ -6,7 +6,7 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="dashboard.php"
               <span data-feather="home"></span>
               Dashboard
             </a>
@@ -23,14 +23,24 @@
               Categories
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="product.php" data-toggle="collapse" data-target="#post_dropdown"><span data-feather="shopping-cart"></span> Post Dropdown </a>
-            <ul id="post_dropdown" class="collapse">
+          <!-- <div class="dropdown open">
+            <a class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                  Dropdown
+                </a>
+            <div class="dropdown-menu" aria-labelledby="triggerId">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item disabled" href="#">Disabled action</a>
+            </div>
+          </div> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span data-feather="shopping-cart"></span> Post Dropdown </a>
+            <ul class="dropdown-menu" aria-labelledby="triggerId">
               <li>
-                <a href="#"> View All Post </a>
+              <a class="nav-link" href="product.php?source=view_all_product""> View All Post </a>
               </li>
               <li>
-                <a href="posts.php?source=add_post"> Add Post </a>
+                <a class="nav-link" href="product.php?source=add_product"> Add Post </a>
               </li>
             </ul>
           </li>
