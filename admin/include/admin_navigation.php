@@ -6,19 +6,6 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-    <div class=" nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-primary" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-            <span data-feather="bar-chart-2"></span> <?php echo $_SESSION['username'] ?> <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li>
-                <a class="dropdown-item" href="#"> Profile</a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="../include/logout.php"> Log Out</a>
-            </li>
-        </ul>
-    </div>
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
             <a class="nav-link px-3" href="../logout.php">Sign out</a>
