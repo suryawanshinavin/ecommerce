@@ -24,10 +24,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="shopping-cart"></span>
-              Products
-            </a>
+            <a class="nav-link" href="product.php" data-toggle="collapse" data-target="#post_dropdown"><span data-feather="shopping-cart"></span> Post Dropdown </a>
+            <ul id="post_dropdown" class="collapse">
+              <li>
+                <a href="#"> View All Post </a>
+              </li>
+              <li>
+                <a href="posts.php?source=add_post"> Add Post </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
