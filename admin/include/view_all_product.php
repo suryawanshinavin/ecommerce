@@ -16,14 +16,27 @@
         </thead>
         <tbody>
             <tr>
+                <?php 
+                
+                global $con;
+                $all_product = "SELECT * FROM POST ";
+
+                ?>
+
+                
                 <td scope="row"></td>
                 <td></td>
                 <td></td>
-            </tr>
-            <tr>
-                <td scope="row"></td>
                 <td></td>
                 <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Edit</td>
+                <td>Delete</td>
             </tr>
         </tbody>
 </table>

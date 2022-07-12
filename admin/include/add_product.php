@@ -17,8 +17,8 @@ if (isset($_POST['add_product'])) {
 
     move_uploaded_file($tmp_image, dirname(dirname(__DIR__)) . "/Images/$image");
 
-    $query = "INSERT INTO product (categories_id, `name`, mrp, sell_price, qty, short_desc, `description`,  `status`, post_date) 
-            VALUES ('{$product_category}','{$product_title}','{$mrp}','{$sell_price}','{$qty}','{$short_desc}','{$long_desc}','$status', now())";
+    $query = "INSERT INTO product (categories_id, `name`, mrp, sell_price, qty, short_desc, `description`, `image`, `status`, post_date) 
+            VALUES ('{$product_category}','{$product_title}','{$mrp}','{$sell_price}','{$qty}','{$short_desc}','{$long_desc}', '{$image}','$status', now())";
 
     $create_product_query = mysqli_query($con, $query);
 
