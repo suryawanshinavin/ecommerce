@@ -19,7 +19,7 @@ if (isset($_POST['login'])) {
   } else if ($pass != $user_row['password']) { // Password incorrect
 
     echo "<script>alert('Password is incorrect!');</script>";
-  } else {
+  } else if ($user_row['user_role'] === 'admin') {
 
     $_SESSION['id'] = $user_row['id'];
     $_SESSION['username'] = $user_row['username'];
@@ -27,40 +27,36 @@ if (isset($_POST['login'])) {
     echo "<script>alert('Login!');</script>";
     header("Location: admin/dashboard.php");
   }
+  else {
+    $_SESSION['id'] = $user_row['id'];
+    $_SESSION['username'] = $user_row['username'];
+    $_SESSION['user_role'] = $user_row['user_role'];
+    echo "<script>alert('Login!');</script>";
+    header("Location: index.php");
+  }
 }
 ?>
 
-<!doctype html>
-<html lang="en">
-
-<head>
-  <title>Login</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS v5.2.0-beta1 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
-</head>
+<?php include ('include/header.php') ?>
 
 <body>
   <div class="container">
     <div class="row justify-content-center align-content-center vh-100">
       <div class="col-7 col-sm-6 col-md-5 col-lg-4 col-xl-4 col-xxl-5">
-        <div class="border border-1 border-dark p-4 rounded-4 shadow bg-body">
+        <div class="border border-1 border-dark p-4 rounded-4 shadow bg-secondary">
           <form action="" method="post">
             <!-- Email input -->
-            <h3 class="mb-5 text-center">Login Form</h3>
+            <h3 class="mb-4 text-center text-info">Login Form</h3>
+            <hr>
             <div class="form-outline mb-3">
+              <label class="form-label text-info" for="form1Example1">Username</label>
               <input type="text" id="form1Example1" name="name" class="form-control" />
-              <label class="form-label" for="form1Example1">Username</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-3">
+              <label class="form-label text-info" for="form1Example2">Password</label>
               <input type="password" id="form1Example2" name="pass" class="form-control" />
-              <label class="form-label" for="form1Example2">Password</label>
             </div>
 
             <!-- 2 column grid layout for inline styling -->
@@ -69,18 +65,18 @@ if (isset($_POST['login'])) {
                 <!-- Checkbox -->
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
-                  <label class="form-check-label" for="form1Example3"> Remember me </label>
+                  <label class="form-check-label  text-info" for="form1Example3"> Remember me </label>
                 </div>
               </div>
 
               <div class="col">
                 <!-- Simple link -->
-                <a href="#!">Forgot password?</a>
+                <a href="#" class="nav-link text-info">Forgot password?</a>
               </div>
             </div>
 
             <!-- Submit button -->
-            <button type="submit" name="login" class="w-100 btn btn-primary shadow fw-bold">Sign in</button>
+            <button type="submit" name="login" class="w-100 btn btn-light shadow fw-bold text-info">Sign in</button>
           </form>
         </div>
       </div>

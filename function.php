@@ -2,7 +2,7 @@
 
 function findUser($con, string $name)
 {
-    $query = "SELECT * FROM `admin_user` WHERE username = '$name'";
+    $query = "SELECT * FROM `admin_user` WHERE username = '$name' ";
     $result = mysqli_query($con, $query);
 
     if (!$result) {

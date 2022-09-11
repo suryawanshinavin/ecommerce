@@ -25,6 +25,7 @@ if (isset($_POST['add_product'])) {
     if (!$create_product_query) {
         die('query Failed' . mysqli_error($con));
     }
+
 }
 
 ?>
@@ -36,7 +37,7 @@ if (isset($_POST['add_product'])) {
     </div>
     <div class="mb-3">
         <select name="product_category" id="">
-            <!-- <option value="">Select</option> -->
+            <option value="">Select</option>
             <?php
 
             $query = "SELECT * FROM categories ";
@@ -88,7 +89,6 @@ if (isset($_POST['add_product'])) {
     </div>
     <input name="add_product" type="submit" class="btn border border-dark btn-light mb-3" value="Add Product">
 </form>
-
 
 </main>
 

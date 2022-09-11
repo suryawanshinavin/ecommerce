@@ -1,78 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php session_start() ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="index.css" rel="stylesheet">
-
-    <title>E-commerce Website </title>
-</head>
+<?php include('include/header.php') ?>
 
 <body>
-    <nav class="navbar shadow navbar-expand-lg navbar-light bg-light ">
-        <div class="container-fluid">
+    <header class="navbar m-0 shadow navbar-expand-lg navbar-light bg-light ">
+        <div class="container">
             <a class="navbar-brand t" href="#">E-commerce</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mt-0 mb-lg-0 ">
+                    <li class="nav-item me-3">
+                        <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-house me-2"></i>Home</a>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link active" href="#">Categories list</a>
+                    <li class="nav-item me-3">
+                        <a class="nav-link active" href="#"><i class="fa-solid fa-list me-2"></i>Categories</a>
                     </li>
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li> -->
-                    <li class="nav-item ">
-                        <a class="nav-link active" href="#">Product Details</a>
+                    <li class="nav-item me-3">
+                        <a class="nav-link active" href="#"><i class="fa-solid fa-cart-shopping me-2"></i>Add to Cart</a>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link active" href="#">Add to Cart</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link active" href="#">Order History</a>
+                    <li class="nav-item me-3">
+                        <a class="nav-link active" href="#"><i class="fa-solid fa-basket-shopping me-2"></i>Orders</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <ul class="navbar-nav me-2 mb-2 mb-lg-0">
-                        <li class="nav-item justify-content-end">
-                            <a class="nav-link active" href="./login.php">Login</a>
-                        </li>
-                    </ul>
+                <div class="navbar-nav me-2 mb-2 mb-lg-0">
+                    <div class="nav-item justify-content-end">
+                        <?php
+
+                        if (isset($_SESSION['id'])) { ?>
+
+                            <a href="/logout.php" class="nav-link active m-3"><i class="fa-solid fa-user me-2"></i><?= $_SESSION['username'] ?></a>
+
+                        <?php } else { ?>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link active m-3 dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-user"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                    <div class="m-2 ms-3 me-3">
+                                        <a href="/login.php" style="color: #fff; list-style: none;">login </a> &ensp; <a href="/register.php" style="color: #fff; list-style: none;" class=" float-end"> Register</a>
+                                    </div>
+                                    <hr>
+                                    <li><a class="dropdown-item" href="#">My Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+
+                        <?php } ?>
+                    </div>
+                </div>
+                <form class="d-flex" method="post">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button class="btn btn-outline-dark" type="submit">Search</button>
                 </form>
             </div>
         </div>
-    </nav>
-    <!-- <div class="row">
-        <div class="card col-xs-4 text-start">
-            <img class="/Images/—Pngtree—suit man_4543023.png" src="text-start" alt="Title">
-            <div class="card-body">
-                <h4 class="card-title">Title</h4>
-                <p class="card-text">Body</p>
+    </header>
+
+    <?php include 'carousel.php' ?>
+
+    <section>
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+            <div class="col-md-5 p-lg-5 mx-auto my-5">
+                <h1 class="display-4 fw-normal">Punny headline</h1>
+                <p class="lead fw-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
+                <a class="btn btn-outline-secondary" href="#">Coming soon</a>
             </div>
+            <div class="product-device shadow-sm d-none d-md-block"></div>
+            <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
         </div>
-    </div> -->
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-</body>
-
-</html>
+    <?php include 'include/footer.php' ?>
