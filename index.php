@@ -6,35 +6,30 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+
 }
 
 .banner {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../image/home_screen_img.jpeg);
+    background: rgba(245, 245, 220, 1);
+    /* background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(245, 245, 220)); */
     background-size: cover;
     background-position: center;
 }
 
-.content {
-    width: 100%;
-    position: absolute;
-    top: 30%;
-    text-align: center;
-    color: black;
-}
 
 .content h1 {
     font-size: 70px;
     margin-top: 50px;
 }
 
-.content p {
-    margin: 20px auto;
-    font-weight: 20px;
+ul {
+    font-weight: 40px;
     line-height: 25px;
     margin-bottom: 0;
+    margin-left: 25px;
 }
 
 button {
@@ -44,7 +39,7 @@ button {
     margin: 20px 10px;
     border-radius: 25px;
     font-weight: bold;
-    border: 2px solid #009688;
+    border: 2px solid black;
     background: transparent;
     color: black;
     cursor: pointer;
@@ -54,7 +49,7 @@ button {
 }
 
 button span {
-    background: #009688;
+    background: white;
     height: 100%;
     width: 0;
     border-radius: 25px;
@@ -68,7 +63,9 @@ button span {
 
 button:hover span {
     width: 100%;
-    color: rgb(22, 21, 21);
+    color: white;
+    border: 2px solid black;
+
 }
 
 button:hover {
@@ -77,35 +74,29 @@ button:hover {
 </style>
 
 <body>
-    <div class="banner">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light pt-2 pb-2 " style="position: fixed; width:100%;">
-            <div class="col-lg-2 mx-auto" style="text-align: center;">
-                <a class="navbar-brand " href="#" style="font-family: 'Times New Roman', Times, serif;">Amoda
-                    Style</a>
-            </div>
-            <div class="col-lg-6 col-md-12 col-sm-12 mx-auto">
-                <ul class="d-flex my-auto" style="justify-content: space-evenly;">
-                    <li>MEN</li>
-                    <li>WOMEN</li>
-                    <li>KID</li>
-                    <li>Accessories</li>
+    <?php include 'include/navbar.php' ?>
+
+
+        <div class="banner">
+        <div class="row">
+            <div class="col-lg-4" style="position:absolute; top: 45%; left: 10%;">
+                <h1>Design your Style</h1>
+                <ul class="list-group">
+                    <li>Design Your Thought</li>
+                    <li>Develop Your Thought</li>
+                    <li>Deliver Your Thought</li>
                 </ul>
+                <div>
+                    <button type="button"><span></span>Design</button>
+                    <button type="button"><span></span>Shop</button>
+                </div>
             </div>
-            <div class="col-lg-2 d-flex mx-auto" style="justify-content: space-evenly;">
-                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                <a href="#" class="link text-black"><i class="fa-solid fa-user"></i></a>
-                <a href="#" class="link text-black"><i class="fa-solid fa-cart-shopping"></i></a>
-            </div>
-        </nav>
-
-        <div class="content" style="top: 45%;">
-            <h1>Design your Home</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae corporis eius quo! <br> utem explicabo
-                animi exercitationem provident. Fuga.</p>
-            <div>
-                <button type="button"><span></span>WATCH MORE</button>
-                <button type="button"><span></span>SUBSCRIBE</button>
+            <!-- <div class="col-lg-4" style="position: absolute; right: 23%; bottom: 0px;">
+                <img src="./image/dress4.png" alt="">
+            </div> -->
+            <div class="col-lg-4" style="position: absolute; right: 0; top: 62px;">
+                <img src="./image/dress3.png" alt="">
             </div>
         </div>
 
